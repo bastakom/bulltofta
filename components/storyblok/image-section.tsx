@@ -15,7 +15,7 @@ export const ImageSection = ({ blok }: any) => {
       }`}
       style={{ background: `${blok.bg_color?.color || ""}` }}
     >
-      <div className="lg:h-[600px] grid gap-14 grid-cols-1 lg:grid-cols-2 ">
+      <div className="lg:h-[600px] grid gap-6 lg:gap-14 grid-cols-1 lg:grid-cols-2 ">
         <div
           className={`w-full h-[350px] lg:h-full relative ${
             blok.image_right && "order-1"
@@ -31,7 +31,7 @@ export const ImageSection = ({ blok }: any) => {
           />
         </div>
         <div
-          className={`flex flex-col gap-5 lg:max-w-[80%] justify-center ${
+          className={`p-2 lg:p-0 flex flex-col gap-5 lg:max-w-[80%] justify-center ${
             blok.text_white && "text-white"
           }`}
         >

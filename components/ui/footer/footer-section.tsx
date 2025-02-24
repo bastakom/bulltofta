@@ -14,13 +14,15 @@ export const FooterSection = ({ props }: any) => {
       style={{ background: `${props.bg_footer?.color}` }}
     >
       <div className="grid lg:grid-cols-4 justify-center w-full container-section lg:pt-14">
-        <Image
-          src={props.footer_logo.filename || props.logo.filename}
-          alt={props.site_title}
-          width={250}
-          height={150}
-          className="lg:-mt-4"
-        />
+        <div className="flex justify-center lg:justify-start">
+          <Image
+            src={props.footer_logo.filename || props.logo.filename}
+            alt={props.site_title}
+            width={250}
+            height={150}
+            className="lg:-mt-4"
+          />
+        </div>
         <div className="flex flex-col gap-5 mt-10 lg:mt-0">
           <h3>{props.contact_title}</h3>
           <span className="render-content">{render(props.adress)}</span>

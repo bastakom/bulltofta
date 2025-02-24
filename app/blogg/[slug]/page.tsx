@@ -10,7 +10,7 @@ type Params = Promise<{ slug: string }>;
 const page = async ({ params }: { params: Params }) => {
   const data = await getBloggSlug((await params).slug);
   return (
-    <div className="py-24 container-section">
+    <div className="py-12 lg:py-24 container-section">
       <div className="flex flex-col gap-14">
         <div className="relative h-[400px]">
           <Image
@@ -21,7 +21,7 @@ const page = async ({ params }: { params: Params }) => {
             className="object-cover"
           />
         </div>
-        <div className="flex gap-14">
+        <div className="lg:flex gap-14">
           <h1 className="-mt-4">{data.name}</h1>
           <span className="">{render(data?.content?.content)}</span>
         </div>

@@ -14,7 +14,7 @@ storyblokInit({
 const page = async () => {
   const data = await getBlogg();
   return (
-    <div className="container-section py-44">
+    <div className="container-section pt-32 pb-10 lg:py-44 ">
       <CardWrapper key={1}>
         {data.map((item: any, i: number) => {
           return (
