@@ -51,7 +51,7 @@ export const Navigation = ({ props }: HeaderProps) => {
           alt={props.site_title}
           width={150}
           height={50}
-          className="z-50"
+          className="z-50 absolute -mt-5"
         />
       </Link>
 
