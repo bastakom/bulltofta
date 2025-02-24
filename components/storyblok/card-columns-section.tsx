@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import placeholder from "@/public/images/placeholder.jpg";
+import { render } from "storyblok-rich-text-react-renderer";
 
 export const CardColumns = ({ blok }: any) => {
   return (
@@ -28,19 +29,21 @@ export const CardColumns = ({ blok }: any) => {
                 : "flex flex-col gap-14"
             } border p-5 lg:p-14 transition-all duration-300 hover:shadow-lg`}
           >
-            <div className="w-full h-[300px] relative">
-              <Image
-                src={item.image.filename || placeholder}
-                fill
-                alt={item.title}
-                className="object-cover"
-              />
-            </div>
+            {item.image.filename && (
+              <div className="w-full h-[300px] relative">
+                <Image
+                  src={item.image.filename || placeholder}
+                  fill
+                  alt={item.title}
+                  className="object-cover"
+                />
+              </div>
+            )}
             <div className="flex flex-col gap-2">
               <h3 className="font-bold">{item.title}</h3>
-              <p className={`${blok.columns === "1" && "lg:max-w-[80%]"}`}>
-                {item.content}
-              </p>
+              <span className={`flex flex-col gap-5 ${blok.columns === "1" && "lg:max-w-[80%]"}`}>
+                {render(item.content)}
+              </span>
             </div>
           </Link>
         ))}
