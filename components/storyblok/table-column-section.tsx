@@ -11,7 +11,7 @@ import {
 export const TableColumnSection = ({ blok }: any) => {
   return (
     <div
-      className={`grid gap-14 container-section grid-cols-1 lg:grid-cols-2 py-14`}
+      className={`grid gap-14 container-section grid-cols-1 lg:grid-cols-2 py-10 lg:py-14`}
     >
       {blok.field.map((item: any) => (
         <Table key={item._uid}>
