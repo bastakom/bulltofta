@@ -44,7 +44,7 @@ export const HeroSection = ({ blok }: HeroProps) => {
         }`}
       >
         <div
-          className="absolute h-full w-full opacity-30"
+          className="absolute h-full w-full opacity-30 z-10"
           style={{ background: `${blok.overlay.color}` }}
         />
         <div
