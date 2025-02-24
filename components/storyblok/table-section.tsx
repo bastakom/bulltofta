@@ -10,7 +10,7 @@ import {
 
 export const TableSection = ({ blok }: any) => {
   return (
-    <div className="container-section">
+    <div className="container-section py-10 lg:py-14">
       <Table>
         <TableHeader>
           <TableRow className="table-head w-[100%]">
