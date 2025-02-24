@@ -1,10 +1,7 @@
 export const Space = ({ blok }: any) => {
   return (
     <div
-      style={{
-        paddingTop: `${blok.range.value}px`,
-        paddingBottom: `${blok.range.value}px`,
-      }}
+      className={`pt-${blok.m_range} pb-${blok.m_range} lg:pt-${blok.range} lg:pb-${blok.range}`}
     />
   );
 };
