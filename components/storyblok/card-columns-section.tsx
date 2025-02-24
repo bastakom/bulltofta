@@ -41,7 +41,12 @@ export const CardColumns = ({ blok }: any) => {
             )}
             <div className="flex flex-col gap-2">
               <h3 className="font-bold">{item.title}</h3>
-              <span className={`flex flex-col gap-5 ${blok.columns === "1" && "lg:max-w-[80%]"}`}>
+              <span
+                className={`flex flex-col gap-5 ${
+                  blok.columns === "1" && "lg:max-w-[80%]"
+                }`}
+              >
+                {/* change to:  */}
                 {render(item.content)}
               </span>
             </div>
