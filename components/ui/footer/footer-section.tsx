@@ -8,7 +8,7 @@ import { render } from "storyblok-rich-text-react-renderer";
 export const FooterSection = ({ props }: any) => {
   return (
     <footer
-      className={`mx-auto text-center lg:text-left pb-20 lg:pb-44 pt-14 relative ${
+      className={`mx-auto text-center text-white lg:text-left pb-20 lg:pb-44 pt-14 relative ${
         props.footer_full_width ? "w-full" : "container-section"
       }`}
       style={{ background: `${props.bg_footer?.color}` }}
@@ -21,7 +21,7 @@ export const FooterSection = ({ props }: any) => {
           height={150}
           className="lg:-mt-4"
         />
-        <div className="flex flex-col gap-5 mt-10 lg:mt-10">
+        <div className="flex flex-col gap-5 mt-10 lg:mt-0">
           <h3>{props.contact_title}</h3>
           <span className="render-content">{render(props.adress)}</span>
           <div className="flex flex-col">
