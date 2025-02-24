@@ -1,7 +1,7 @@
 $primary: #121212;
 $primary-text: #fff;
 $primary-hover: #303000;
-$forground: #f8f8f8;
+$forground: #772e33;
 
 $secondary: #fff;
 $secondary-text: $primary;
@@ -76,4 +76,7 @@ a {
 
 .table-head {
   background: $forground;
+  th {
+    color: white;
+  }
 }
