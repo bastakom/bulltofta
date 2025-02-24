@@ -83,7 +83,7 @@ export const HeroSection = ({ blok }: HeroProps) => {
           </video>
         ) : (
           <Image
-            className="z-0"
+            className="z-0 object-cover"
             src={blok.bg_image.filename || ""}
             fill
             alt={blok.title}
