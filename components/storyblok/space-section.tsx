@@ -24,6 +24,8 @@ export const Space = ({ blok }: any) => {
         return "pt-5 pb-5";
       case "10":
         return "pt-10 pb-10";
+      case "12":
+        return "pt-12 pb-12";
       case "14":
         return "pt-14 pb-14";
       case "24":

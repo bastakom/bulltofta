@@ -15,7 +15,7 @@ export const ImageSection = ({ blok }: any) => {
       }`}
       style={{ background: `${blok.bg_color?.color || ""}` }}
     >
-      <div className="lg:h-[600px] grid gap-6 lg:gap-14 grid-cols-1 lg:grid-cols-2 ">
+      <div className="lg:h-[600px] grid gap-6 lg:gap-14 grid-cols-1 lg:grid-cols-2">
         <div
           className={`w-full h-[350px] lg:h-full relative ${
             blok.image_right && "order-1"
