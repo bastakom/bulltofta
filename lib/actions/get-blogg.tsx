@@ -9,7 +9,7 @@ export async function getBlogg() {
   const client = getStoryblokApi();
 
   const data = await client.get(`cdn/stories/`, sbParams, {
-    cache: "no-store",
+    cache: "force-cache",
   });
 
   return data.data.stories;

@@ -7,7 +7,9 @@ export async function getThemeSettings() {
 
   const client = getStoryblokApi();
 
-  const data = await client.get(`cdn/stories/theme-settings`, sbParams);
+  const data = await client.get(`cdn/stories/theme-settings`, sbParams, {
+    cache: "force-cache",
+  });
 
   return data.data.story;
 }
