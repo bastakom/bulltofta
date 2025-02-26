@@ -1,11 +1,12 @@
 $primary: #121212;
 $primary-text: #fff;
-$primary-hover: #303000;
+$primary-hover:#ffef00; 
+$primary-hover-text: #000;
 $forground: #772e33;
 
 $secondary: #fff;
 $secondary-text: $primary;
-$secondary-hover: #303000;
+$secondary-hover: #ffef00;
 
 $h1: 85px;
 $h1-mobile: 40px;
@@ -54,6 +55,7 @@ a {
 
   &:hover {
     background: $primary-hover;
+    color: $primary-hover-text;
   }
 }
 .secondary-button {
@@ -72,6 +74,10 @@ a {
   background: $primary;
   color: white;
   border-radius: 29px;
+}
+
+table {
+  border: 1px solid #e5e5e5;
 }
 
 .table-head {

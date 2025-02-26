@@ -4,9 +4,22 @@ import { cn } from "@/lib/utils";
 
 const Table = React.forwardRef<
   HTMLTableElement,
-  React.HTMLAttributes<HTMLTableElement>
->(({ className, ...props }, ref) => (
-  <div className="relative w-full overflow-auto">
+  React.HTMLAttributes<HTMLTableElement> & {
+    settings?: {
+      content?: {
+        border_template?: boolean;
+      };
+    };
+    w?: boolean;
+  }
+>(({ className, settings, w, ...props }, ref) => (
+  <div
+    className={cn(
+      settings?.content?.border_template ? "rounded-[9px]" : "",
+      "relative w-full overflow-auto",
+      w && "w-[50%] mx-auto",
+    )}
+  >
     <table
       ref={ref}
       className={cn("w-full caption-bottom text-sm", className)}
@@ -22,8 +35,7 @@ const TableHeader = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <thead ref={ref} className={cn("[&_tr]:border-b ", className)} {...props} />
 ));
-TableHeader.displayName = "TableHeader";
-
+TableHeader.displayName = " TableHeader";
 const TableBody = React.forwardRef<
   HTMLTableSectionElement,
   React.HTMLAttributes<HTMLTableSectionElement>
@@ -44,7 +56,7 @@ const TableFooter = React.forwardRef<
     ref={ref}
     className={cn(
       "border-t bg-muted/50 font-medium [&>tr]:last:border-b-0",
-      className
+      className,
     )}
     {...props}
   />
@@ -59,7 +71,7 @@ const TableRow = React.forwardRef<
     ref={ref}
     className={cn(
       "border-b transition-colors  data-[state=selected]:bg-muted",
-      className
+      className,
     )}
     {...props}
   />
@@ -74,7 +86,7 @@ const TableHead = React.forwardRef<
     ref={ref}
     className={cn(
       "h-10 px-2 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-[16px] lg:text-[20px] p-4",
-      className
+      className,
     )}
     {...props}
   />
@@ -89,7 +101,7 @@ const TableCell = React.forwardRef<
     ref={ref}
     className={cn(
       "p-4 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-[16px] lg:text-[20px]",
-      className
+      className,
     )}
     {...props}
   />

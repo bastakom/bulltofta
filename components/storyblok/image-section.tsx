@@ -6,34 +6,30 @@ import { LinkTypes } from "@/types/IfLinkInterface";
 import Link from "next/link";
 import { Button } from "../ui/button";
 
-export const ImageSection = ({ blok }: any) => {
+export const ImageSection = ({ blok, settings }: any) => {
   return (
     <div
       {...storyblokEditable}
-      className={`${blok.full_width ? "w-full" : "container-section "}  ${
+      className={`${blok.full_width ? "w-full" : "container-section "} ${
         blok.bg_color?.color && "p-5 lg:p-14"
       }`}
       style={{ background: `${blok.bg_color?.color || ""}` }}
     >
       <div className="lg:h-[600px] grid gap-6 lg:gap-14 grid-cols-1 lg:grid-cols-2">
         <div
-          className={`w-full h-[350px] lg:h-full relative ${
-            blok.image_right && "order-1"
-          }`}
+          className={`w-full h-[350px] lg:h-full relative ${blok.image_right && "order-1"}`}
         >
           <Image
             src={blok.image.filename || placeholder}
             alt={blok.title}
             fill
-            className={`object-cover ${
+            className={`${settings.content.border_template && "rounded-[50px]"} object-cover ${
               blok.image_right ? "p-0 lg:p-10 pr-0" : "p-0 lg:p-10 pl-0"
             }`}
           />
         </div>
         <div
-          className={`p-2 lg:p-0 flex flex-col gap-5 lg:max-w-[80%] justify-center ${
-            blok.text_white && "text-white"
-          }`}
+          className={`p-2 lg:p-0 flex flex-col gap-5 lg:max-w-[80%] justify-center ${blok.text_white && "text-white"}`}
         >
           {blok.sub_title && <h3>{blok.sub_title}</h3>}
           {blok.title && <h2>{blok.title}</h2>}

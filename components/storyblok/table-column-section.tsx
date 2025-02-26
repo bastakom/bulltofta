@@ -1,20 +1,19 @@
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
 
-export const TableColumnSection = ({ blok }: any) => {
+export const TableColumnSection = ({ blok, settings }: any) => {
   return (
     <div
       className={`grid gap-14 container-section grid-cols-1 lg:grid-cols-2 py-10 lg:py-14`}
     >
       {blok.field.map((item: any) => (
-        <Table key={item._uid}>
+        <Table key={item._uid} settings={settings}>
           <TableHeader>
             <TableRow className="table-head">
               {item.header.map((item: any, index: number) => {

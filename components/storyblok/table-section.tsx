@@ -1,19 +1,20 @@
+"use client";
+
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
 
-export const TableSection = ({ blok }: any) => {
+export const TableSection = ({ blok, settings }: any) => {
   return (
     <div className="container-section py-10 lg:py-14">
-      <Table>
+      <Table w={blok.centered} settings={settings}>
         <TableHeader>
-          <TableRow className="table-head w-[100%]">
+          <TableRow className={`table-head w-[100%] `}>
             {blok.header.map((item: any) => (
               <TableHead key={item._uid}>{item.title}</TableHead>
             ))}

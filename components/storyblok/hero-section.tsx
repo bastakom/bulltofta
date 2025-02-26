@@ -38,10 +38,12 @@ export const HeroSection = ({ blok }: HeroProps) => {
     >
       <div
         className={`relative ${
-          blok?.video ? "h-full" : blok.small_hero ? "h-[50vh] lg:min-h-[50vh]" : "h-full lg:min-h-[80vh]"
-        } justify-center flex items-center ${
-          blok.frame && "container-section mt-20"
-        }`}
+          blok?.video
+            ? "h-full"
+            : blok.small_hero
+              ? "h-[50vh] lg:min-h-[50vh]"
+              : "h-full lg:min-h-[80vh]"
+        } justify-center flex items-center ${blok.frame && "container-section mt-20"}`}
       >
         <div
           className="absolute h-full w-full opacity-30 z-10"
@@ -66,8 +68,11 @@ export const HeroSection = ({ blok }: HeroProps) => {
           </div>
           <div className="flex gap-2">
             {blok.buttons.map((item: LinkTypes) => (
-              <Button key={item._uid} variant={`${item.secondary_color ? "secondary" : "default"}`}>
-                <Link href="/">{item.title}</Link>
+              <Button
+                key={item._uid}
+                variant={`${item.secondary_color ? "secondary" : "default"}`}
+              >
+                <Link href={item.link.cached_url || "/"}> {item.title}</Link>
               </Button>
             ))}
           </div>
