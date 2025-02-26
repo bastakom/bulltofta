@@ -7,7 +7,7 @@ import { render } from "storyblok-rich-text-react-renderer";
 
 export const CardColumns = ({ blok, settings }: any) => {
   return (
-    <div className="container-section mx-auto">
+    <div className="container-section mx-auto my-14">
       <div
         className={`grid xl:max-w-[80%] mx-auto gap-10 py-6 ${
           blok.columns === "4"
