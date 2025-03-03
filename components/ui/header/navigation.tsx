@@ -7,6 +7,7 @@ import { useState } from "react";
 import Hamburger from "hamburger-react";
 import { useParams, usePathname } from "next/navigation";
 import { Socials } from "../socials/socials";
+import { OpeningHours } from "../opening-hours/opening-hours";
 
 interface HeaderProps {
   props: {
@@ -54,6 +55,8 @@ export const Navigation = ({ props }: HeaderProps) => {
           className={`${open ? "hidden" : "z-50 absolute -mt-5 print-hidden"}`}
         />
       </Link>
+
+      <OpeningHours />
 
       <div className={`hidden lg:flex`}>
         <div>
