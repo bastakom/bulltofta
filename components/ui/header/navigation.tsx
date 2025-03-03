@@ -61,7 +61,7 @@ export const Navigation = ({ props }: HeaderProps) => {
             return (
               <Link
                 key={item._uid}
-                href={item.link.cached_url}
+                href={`/${item.link.cached_url}`}
                 style={{
                   color:
                     path === `/${item.link.cached_url}`
