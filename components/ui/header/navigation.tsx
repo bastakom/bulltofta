@@ -51,7 +51,7 @@ export const Navigation = ({ props }: HeaderProps) => {
           alt={props.site_title}
           width={150}
           height={50}
-          className="z-50 absolute -mt-5"
+          className={`${open ? "hidden" : "z-50 absolute -mt-5 print-hidden"}`}
         />
       </Link>
 
@@ -61,7 +61,7 @@ export const Navigation = ({ props }: HeaderProps) => {
             return (
               <Link
                 key={item._uid}
-                href={`/${item.link.cached_url}`}
+                href={item.link.cached_url}
                 style={{
                   color:
                     path === `/${item.link.cached_url}`
@@ -77,16 +77,13 @@ export const Navigation = ({ props }: HeaderProps) => {
             );
           })}
         </div>
-        <div className="hidden lg:flex">
-          <Socials props={props.fields} color={props.header_text_color} />
-        </div>
       </div>
 
-      <div className="block lg:hidden">
+      <div className="block print-hidden lg:hidden">
         <Hamburger toggled={open} toggle={setMenuOpen} />
       </div>
       <div
-        className={`gap-2 fixed top-0 h-full w-full mt-20 px-10 py-14 left-0 flex-col flex text-[32px] z-50 transition-all duration-300 right-0 ${
+        className={`gap-2 fixed top-0 h-full w-full mt-20 px-10 py-14 left-0 flex-col flex text-[32px] z-50 transition-all duration-300 right-0 print-hidden ${
           !open ? "translate-x-full" : "translate-x-0"
         }`}
         style={{ background: `${props.header_bg_color.color}` }}
@@ -95,7 +92,7 @@ export const Navigation = ({ props }: HeaderProps) => {
           <Link
             onClick={handleOpenMenu}
             key={item._uid}
-            href={`/${item.link.cached_url}`}
+            href={item.link.cached_url}
             style={{ color: props.header_text_color.color }}
           >
             {item.title}

@@ -11,6 +11,8 @@ import { ContactForm } from "./ui/form/contact-form";
 import { CardColumns } from "./storyblok/card-columns-section";
 import { TableSection } from "./storyblok/table-section";
 import { TableColumnSection } from "./storyblok/table-column-section";
+import { PrintButton } from "./print-button";
+import { PrivacyPolicy } from "./privacy-policy";
 
 storyblokInit({
   components: {
@@ -24,6 +26,8 @@ storyblokInit({
     card_columns: CardColumns,
     table: TableSection,
     table_columns: TableColumnSection,
+    print_button: PrintButton,
+    privacy_policy: PrivacyPolicy,
   },
 
   enableFallbackComponent: true,
