@@ -15,19 +15,21 @@ const page = async () => {
   const data = await getBlogg();
   return (
     <div className="container-section pt-32 pb-10 lg:py-44 ">
-      <CardWrapper key={1}>
+      <div className="grid gap-5 grid-cols-1 lg:grid-cols-4">
         {data.map((item: any, i: number) => {
           return (
-            <Card
-              title={item.name}
-              uuid={i}
-              link={item.full_slug}
-              content={item.content.content}
-              image={item.content?.image?.filename}
-            />
+            <div key={i}>
+              <Card
+                title={item.name}
+                uuid={i}
+                link={item.full_slug}
+                content={item.content.content}
+                image={item.content?.image?.filename}
+              />
+            </div>
           );
         })}
-      </CardWrapper>
+      </div>
     </div>
   );
 };
