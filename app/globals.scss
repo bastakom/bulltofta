@@ -91,6 +91,12 @@
   }
 }
 
+@media print {
+  .print-hidden {
+    display: none;
+  }
+}
+
 /* Tabel styling */
 
 .display-left:last-of-type {

@@ -4,11 +4,12 @@ import { LinkTypes } from "@/types/IfLinkInterface";
 import Image from "next/image";
 import Link from "next/link";
 import { render } from "storyblok-rich-text-react-renderer";
+import { Socials } from "../socials/socials";
 
 export const FooterSection = ({ props }: any) => {
   return (
     <footer
-      className={`mx-auto text-center text-white lg:text-left pb-20 lg:pb-44 pt-14 relative ${
+      className={`mx-auto text-center text-black lg:text-left pb-20 lg:pb-44 pt-14 relative print-hidden ${
         props.footer_full_width ? "w-full" : "container-section"
       }`}
       style={{ background: `${props.bg_footer?.color}` }}
@@ -29,6 +30,9 @@ export const FooterSection = ({ props }: any) => {
           <div className="flex flex-col">
             <Link href={`mailto:${props.mail}`}>{props.mail}</Link>
             <Link href={`tel:${props.phone}`}>{props.phone}</Link>
+            <div className="flex mt-5 items-center justify-center lg:justify-start">
+              <Socials props={props.fields} color={props.header_text_color} />
+            </div>
           </div>
         </div>
         <div className="flex flex-col mt-10 lg:mt-0">
@@ -41,7 +45,7 @@ export const FooterSection = ({ props }: any) => {
       </div>
       <div className="flex gap-5 justify-center pt-14 lg:pt-0 lg:absolute right-14 bottom-5">
         <Link href="/cookies">Cookies</Link>
-        <Link href="/privacy-policy">Privacy policy</Link>
+        <Link href={props.link.cached_url}>{props.link_title}</Link>
       </div>
     </footer>
   );

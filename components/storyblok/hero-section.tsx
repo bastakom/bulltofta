@@ -37,13 +37,15 @@ export const HeroSection = ({ blok }: HeroProps) => {
       className={`h-full w-full flex flex-col justify-center mx-auto`}
     >
       <div
-        className={`relative ${
+        className={`relative print-hidden ${
           blok?.video
             ? "h-full"
             : blok.small_hero
-              ? "h-[50vh] lg:min-h-[50vh]"
-              : "h-full lg:min-h-[80vh]"
-        } justify-center flex items-center ${blok.frame && "container-section mt-20"}`}
+            ? "h-[50vh] lg:min-h-[50vh]"
+            : "h-full lg:min-h-[80vh]"
+        } justify-center flex items-center ${
+          blok.frame && "container-section mt-20"
+        }`}
       >
         <div
           className="absolute h-full w-full opacity-30 z-10"
