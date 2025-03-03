@@ -95,7 +95,7 @@ export const Navigation = ({ props }: HeaderProps) => {
           <Link
             onClick={handleOpenMenu}
             key={item._uid}
-            href={item.link.cached_url}
+            href={`/${item.link.cached_url}`}
             style={{ color: props.header_text_color.color }}
           >
             {item.title}
