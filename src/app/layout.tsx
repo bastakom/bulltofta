@@ -3,6 +3,7 @@ import { StoryblokProvider } from "@/components/StoryblokProvider";
 import { apiPlugin, storyblokInit } from "@storyblok/react";
 import { Header } from "@/components/ui/header/header";
 import "./globals.scss";
+import "./font.css";
 import "./theme.scss";
 import "./fonts.scss";
 import { Footer } from "@/components/ui/footer/footer";
