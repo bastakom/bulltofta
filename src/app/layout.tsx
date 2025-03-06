@@ -7,6 +7,7 @@ import "./font.css";
 import "./theme.scss";
 import "./fonts.scss";
 import { Footer } from "@/components/ui/footer/footer";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Bulltofta kött",
@@ -34,6 +35,15 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
+          <Script src="https://consent.cookiebot.com/uc.js" />
+          <script
+            id="Cookiebot"
+            src="https://consent.cookiebot.com/uc.js"
+            data-cbid="6b273920-5367-485a-8b9a-ff22f451f1b1"
+            data-blockingmode="manual"
+            type="text/javascript"
+            async
+          ></script>
         </body>
       </html>
     </StoryblokProvider>
