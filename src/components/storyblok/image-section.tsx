@@ -15,7 +15,11 @@ export const ImageSection = ({ blok, settings }: any) => {
       }`}
       style={{ background: `${blok.bg_color?.color || ""}` }}
     >
-      <div className="lg:h-[600px] grid gap-6 lg:gap-14 grid-cols-1 lg:grid-cols-2">
+      <div
+        className={`grid gap-6 lg:gap-14 grid-cols-1 lg:grid-cols-2 ${
+          blok.big_block ? "lg:h-[900px]" : "lg:h-[600px]"
+        }`}
+      >
         <div
           className={`w-full h-[350px] lg:h-full relative ${
             blok.image_right && "order-1"
@@ -39,7 +43,9 @@ export const ImageSection = ({ blok, settings }: any) => {
         >
           {blok.sub_title && <h3>{blok.sub_title}</h3>}
           {blok.title && <h2>{blok.title}</h2>}
-          {blok.content && <span>{render(blok.content)}</span>}
+          {blok.content && (
+            <span className="image-content">{render(blok.content)}</span>
+          )}
           <div>
             {blok.buttons.map((item: LinkTypes) => (
               <Button
