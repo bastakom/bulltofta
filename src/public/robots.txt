@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.bulltofta.nu/
+
+# Sitemaps
+Sitemap: https://www.bulltofta.nu//sitemap.xml
