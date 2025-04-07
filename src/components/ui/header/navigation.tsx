@@ -58,7 +58,7 @@ export const Navigation = ({ props }: HeaderProps) => {
 
       <OpeningHours />
 
-      <div className={`hidden lg:flex`}>
+      <div className={`hidden lg:flex gap-4`}>
         <div>
           {props.meny.map((item: LinkTypes) => {
             return (
@@ -80,6 +80,7 @@ export const Navigation = ({ props }: HeaderProps) => {
             );
           })}
         </div>
+        <Socials props={props.fields} color={props.header_text_color} />
       </div>
 
       <div className="block print-hidden lg:hidden">
@@ -101,6 +102,9 @@ export const Navigation = ({ props }: HeaderProps) => {
             {item.title}
           </Link>
         ))}
+        <div className="pt-10">
+          <Socials props={props.fields} color={props.header_text_color} />
+        </div>
       </div>
     </nav>
   );
