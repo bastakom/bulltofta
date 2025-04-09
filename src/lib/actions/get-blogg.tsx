@@ -2,7 +2,7 @@ import { getStoryblokApi } from "@storyblok/react";
 
 export async function getBlogg() {
   let sbParams = {
-    version: "draft" as const,
+    version: "published" as const,
     starts_with: "blogg",
   };
 
