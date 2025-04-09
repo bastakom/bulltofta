@@ -2,7 +2,7 @@ import { getStoryblokApi } from "@storyblok/react/rsc";
 
 export async function getBloggSlug(slug: string) {
   let sbParams = {
-    version: "draft" as const,
+    version: "published" as const,
     cv: Date.now(),
   };
 
