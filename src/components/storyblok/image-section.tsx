@@ -11,7 +11,7 @@ export const ImageSection = ({ blok, settings }: any) => {
     <div
       {...storyblokEditable}
       className={`${blok.full_width ? "w-full" : "container-section "} ${
-        blok.bg_color?.color && "p-5 lg:p-14"
+        blok.bg_color?.color && "pb-10 lg:p-14"
       }`}
       style={{ background: `${blok.bg_color?.color || ""}` }}
     >
